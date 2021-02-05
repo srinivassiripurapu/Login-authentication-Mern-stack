@@ -4,13 +4,17 @@ const dotenv = require("dotenv");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 
-dotenv.config();
+dotenv.config(); 
 
-// set up server
+ // set up server
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT =   process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server started on port: ${PORT}`));
+
+app.get("/test", (req,res) =>{
+  res.send("It works")
+});
 
 app.use(express.json());
 app.use(cookieParser());
@@ -24,7 +28,7 @@ app.use(
   })
 );
 
-// connect to mongoDB
+ // connect to mongoDB
 
 mongoose.connect(
   process.env.MDB_CONNECT,
@@ -38,7 +42,7 @@ mongoose.connect(
   }
 );
 
-// set up routes
+ // set up routes
 
-app.use("/auth", require("./routers/userRouter"));
-app.use("/customer", require("./routers/customerRouter"));
+ app.use("/auth", require("./routers/userRouter"));
+ app.use("/customer", require("./routers/customerRouter"));

@@ -118,6 +118,8 @@ router.post("/login", async (req, res) => {
   }
 });
 
+// destroys the users session on logout
+
 router.get("/logout", (req, res) => {
   res
     .cookie("token", "", {
