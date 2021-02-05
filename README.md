@@ -1,4 +1,5 @@
 1.Developed login authenication application using Mern stack.<br/>
+Used react for frontend.<br/>
 2.Used mongodb to store the user credentials when user try to register.<br/>
 3.Used express node module for setting up the server.<br/>
 4.Used mongoose module to connect to mongodb.<br/>
